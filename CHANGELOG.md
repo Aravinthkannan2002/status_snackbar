@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2026-01-04
+
+### Changed
+- Optimized demo GIF size from 10MB to 2MB for faster loading
+
 ## [1.1.1] - 2026-01-04
 
 ### Fixed
