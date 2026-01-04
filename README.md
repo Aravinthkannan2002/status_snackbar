@@ -5,6 +5,12 @@ Beautiful, customizable snackbars with multiple states for Flutter. Supports suc
 [![pub package](https://img.shields.io/pub/v/status_snackbar.svg)](https://pub.dev/packages/status_snackbar)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## Platform Support
+
+| Android | iOS | Web | macOS | Windows | Linux |
+|:-------:|:---:|:---:|:-----:|:-------:|:-----:|
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
 ## Features
 
 - 4 built-in states: **Success**, **Error**, **Warning**, **Info**
