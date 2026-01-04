@@ -27,7 +27,7 @@ Beautiful, customizable snackbars with multiple states for Flutter. Supports suc
 
 ## Preview
 
-![Status Snackbar Demo](demo.gif)
+![Status Snackbar Demo](https://raw.githubusercontent.com/Aravinthkannan2002/status_snackbar/main/demo.gif)
 
 ## Installation
 
