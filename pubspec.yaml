@@ -1,0 +1,26 @@
+name: status_snackbar
+description: Beautiful, customizable snackbars with multiple states (success, error, warning, info). Supports dark mode, subtitles, and easy BuildContext extensions.
+version: 1.0.0
+homepage: https://github.com/Aravinthkannan2002/status_snackbar
+repository: https://github.com/Aravinthkannan2002/status_snackbar
+issue_tracker: https://github.com/Aravinthkannan2002/status_snackbar/issues
+
+topics:
+  - snackbar
+  - toast
+  - notification
+  - ui
+  - widgets
+
+environment:
+  sdk: ^3.0.0
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
