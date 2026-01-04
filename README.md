@@ -16,19 +16,18 @@ Beautiful, customizable snackbars with multiple states for Flutter. Supports suc
 - 4 built-in states: **Success**, **Error**, **Warning**, **Info**
 - Automatic **dark mode** support
 - Optional **subtitle** for additional details
-- **Close button** to dismiss
+- **Close button** to dismiss (can be hidden)
 - **Context extension** for easy access
 - Customizable **duration**
+- **Custom icons** and **colors** support
+- **Position control**: Show at top or bottom of screen
+- **Action button**: Add interactive buttons with callbacks
+- **Dismiss callback**: Get notified when snackbar closes
 - Beautiful, modern design
 
 ## Preview
 
-| Light Mode | Dark Mode |
-|------------|-----------|
-| Success (green) | Success (dark green) |
-| Error (red) | Error (dark red) |
-| Warning (amber) | Warning (dark amber) |
-| Info (blue) | Info (dark blue) |
+![Status Snackbar Demo](demo.gif)
 
 ## Installation
 
@@ -36,7 +35,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  status_snackbar: ^1.0.0
+  status_snackbar: ^1.1.0
 ```
 
 Then run:
@@ -108,6 +107,66 @@ StatusSnackbar.showSuccess(
 );
 ```
 
+### Position (Top or Bottom)
+
+```dart
+// Show at top of screen
+context.showInfoSnackbar(
+  'New message received',
+  position: SnackbarPosition.top,
+);
+
+// Show at bottom (default)
+StatusSnackbar.showSuccess(
+  context,
+  'Saved!',
+  position: SnackbarPosition.bottom,
+);
+```
+
+### Action Button
+
+```dart
+// With action button
+context.showErrorSnackbar(
+  'Item deleted',
+  actionLabel: 'Undo',
+  onAction: () {
+    // Restore the item
+    print('Undo pressed!');
+  },
+);
+
+// Action with dismiss callback
+StatusSnackbar.showWarning(
+  context,
+  'Changes pending',
+  actionLabel: 'Save Now',
+  onAction: () => saveChanges(),
+  onDismiss: () => print('Snackbar closed'),
+);
+```
+
+### Hide Close Button
+
+```dart
+// Without close button
+context.showInfoSnackbar(
+  'Processing...',
+  showCloseButton: false,
+);
+```
+
+### Hide Icon
+
+```dart
+// Without icon
+context.showSuccessSnackbar(
+  'Done!',
+  showIcon: false,
+);
+```
+
 ### Generic Show Method
 
 ```dart
@@ -130,6 +189,55 @@ The package uses predefined color schemes that automatically adapt to light/dark
 | Error | Red 100 | Red 900 | error |
 | Warning | Amber 100 | Amber 900 | warning |
 | Info | Blue 100 | Blue 900 | info |
+
+### Custom Icons
+
+You can easily customize the icon for any snackbar:
+
+```dart
+// Custom icon with default colors
+context.showSuccessSnackbar(
+  'File uploaded!',
+  icon: Icons.cloud_done,
+);
+
+// Custom icon and color
+StatusSnackbar.showError(
+  context,
+  'No internet connection',
+  icon: Icons.wifi_off,
+  iconColor: Colors.orange,
+);
+```
+
+### Fully Custom Snackbar
+
+Create completely custom snackbars with your own configuration:
+
+```dart
+// Using copyWith to modify defaults
+context.showCustomSnackbar(
+  'Payment received!',
+  config: SnackbarConfigs.success.copyWith(
+    icon: Icons.payment,
+    iconColor: Colors.teal,
+  ),
+);
+
+// Fully custom config
+StatusSnackbar.showCustom(
+  context,
+  'Custom notification',
+  config: SnackbarConfig(
+    lightBackgroundColor: Colors.purple.shade100,
+    lightTextColor: Colors.purple.shade900,
+    darkBackgroundColor: Colors.purple.shade900,
+    darkTextColor: Colors.purple.shade100,
+    iconColor: Colors.purple,
+    icon: Icons.star,
+  ),
+);
+```
 
 ## Example
 

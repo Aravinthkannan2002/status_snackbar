@@ -15,3 +15,12 @@ enum SnackbarState {
   /// Info state - blue colors with info icon
   info,
 }
+
+/// Position of the snackbar on screen.
+enum SnackbarPosition {
+  /// Show snackbar at the bottom of the screen (default)
+  bottom,
+
+  /// Show snackbar at the top of the screen
+  top,
+}

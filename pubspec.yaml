@@ -1,6 +1,6 @@
 name: status_snackbar
 description: Beautiful, customizable snackbars with multiple states (success, error, warning, info). Supports dark mode, subtitles, and easy BuildContext extensions.
-version: 1.0.1
+version: 1.1.0
 homepage: https://github.com/Aravinthkannan2002/status_snackbar
 repository: https://github.com/Aravinthkannan2002/status_snackbar
 issue_tracker: https://github.com/Aravinthkannan2002/status_snackbar/issues

@@ -4,6 +4,21 @@ import 'package:flutter/material.dart';
 ///
 /// Defines the colors and icon for each snackbar state,
 /// supporting both light and dark themes.
+///
+/// You can use the default configurations from [SnackbarConfigs] or create
+/// your own custom configuration.
+///
+/// Example - Custom config:
+/// ```dart
+/// const myCustomConfig = SnackbarConfig(
+///   lightBackgroundColor: Color(0xFFE8F5E9),
+///   lightTextColor: Color(0xFF1B5E20),
+///   darkBackgroundColor: Color(0xFF1B5E20),
+///   darkTextColor: Color(0xFFE8F5E9),
+///   iconColor: Color(0xFF4CAF50),
+///   icon: Icons.thumb_up,
+/// );
+/// ```
 class SnackbarConfig {
   /// Creates a snackbar configuration.
   const SnackbarConfig({
@@ -32,9 +47,38 @@ class SnackbarConfig {
 
   /// Icon to display
   final IconData icon;
+
+  /// Creates a copy of this config with the given fields replaced.
+  SnackbarConfig copyWith({
+    Color? lightBackgroundColor,
+    Color? lightTextColor,
+    Color? darkBackgroundColor,
+    Color? darkTextColor,
+    Color? iconColor,
+    IconData? icon,
+  }) {
+    return SnackbarConfig(
+      lightBackgroundColor: lightBackgroundColor ?? this.lightBackgroundColor,
+      lightTextColor: lightTextColor ?? this.lightTextColor,
+      darkBackgroundColor: darkBackgroundColor ?? this.darkBackgroundColor,
+      darkTextColor: darkTextColor ?? this.darkTextColor,
+      iconColor: iconColor ?? this.iconColor,
+      icon: icon ?? this.icon,
+    );
+  }
 }
 
 /// Default configurations for each snackbar state.
+///
+/// Use these pre-built configurations or customize them using [copyWith].
+///
+/// Example - Customize default config:
+/// ```dart
+/// final customSuccess = SnackbarConfigs.success.copyWith(
+///   icon: Icons.thumb_up,
+///   iconColor: Colors.teal,
+/// );
+/// ```
 class SnackbarConfigs {
   SnackbarConfigs._();
 
